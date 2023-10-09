@@ -28,6 +28,12 @@ conda activate summarizer
 pip install -r requirements.txt
 ```
 
+### Create a `.env` file in the root directory and add your OpenAI API key and Telegram BOT TOKEN as follows:
+
+```ini
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+```
+
 
 ```bash
 # Finally run the following command
