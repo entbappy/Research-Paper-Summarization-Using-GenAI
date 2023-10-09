@@ -1,0 +1,8 @@
+openai
+tiktoken
+langchain
+chromadb
+pypdf
+gradio
+streamlit
+-e .
