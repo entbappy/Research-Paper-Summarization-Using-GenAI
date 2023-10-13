@@ -3,12 +3,12 @@ import os
 from dotenv import load_dotenv
 from langchain import PromptTemplate
 from langchain.chains.summarize import load_summarize_chain
-
+from paperSummarizer import logger
 
 load_dotenv()
 openai.api_key = os.getenv("OpenAI_API_KEY")  
 
-
+logger.info("OpenAI_API_KEY loaded Successfully!") 
 
 
 def custom_summary(docs, llm, custom_prompt, chain_type, num_summaries):
