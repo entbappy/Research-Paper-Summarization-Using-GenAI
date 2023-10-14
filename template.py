@@ -11,6 +11,7 @@ list_of_files = [
     f"src/{project_name}/__init__.py",
     f"src/{project_name}/components/__init__.py",
     f"src/{project_name}/utils/__init__.py",
+    f"src/{project_name}/constants/__init__.py",
     "config/config.yaml",
     ".env",
     "requirements.txt",

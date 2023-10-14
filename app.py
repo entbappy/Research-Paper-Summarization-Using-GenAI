@@ -2,7 +2,8 @@ import streamlit as st
 from langchain.chat_models import ChatOpenAI
 from paperSummarizer.components.load_docs import load_documents
 from paperSummarizer.components.custom_summarizer import custom_summary
-
+from paperSummarizer.constants import *
+from paperSummarizer.utils import read_yaml
 
 
 def main():
@@ -16,7 +17,19 @@ def main():
     
 
     user_prompt = st.text_input("Enter the custom summary prompt")
-    pdf_file_path = st.text_input("Enther the reseach paper pdf file path")
+
+    config = read_yaml(CONFIG_FILE_PATH)
+    
+    pdf_file_path = ""
+
+    uploaded_file = st.file_uploader("Choose a file")
+
+    if uploaded_file is not None:
+        pdf_file_path = config.paper_path
+        print(pdf_file_path)
+        bytes_data = uploaded_file.getvalue()
+        with open(pdf_file_path, 'wb') as f: 
+            f.write(bytes_data)
     
     temperature = st.sidebar.number_input("Set the Model Temperature",
                                             min_value = 0.0,
